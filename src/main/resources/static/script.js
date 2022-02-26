@@ -1,6 +1,6 @@
 
 function regBil(){
-    const bil = {
+    const motorvogn = {
         personnummer : $("#personnummer").val(),
         navn : $("#navn").val(),
         adresse : $("#adresse").val(),
@@ -8,7 +8,7 @@ function regBil(){
         bilmerke : $("#bilmerke").val(),
         biltype : $("#biltype").val(),
     };
-    $.post("/lagre", bil, function (){
+    $.post("/lagre", motorvogn, function (){
         hentAlle();
     });
     $("#personnummer").val("");
@@ -20,12 +20,12 @@ function regBil(){
 }
 
 function hentAlle(){
-        $.get("/hentAlle", function (data){
-        formaterData(data);
+        $.get("/hentAlle", function (biler){
+        formaterData(biler);
     });
 }
 
-function formaterData(data){
+function formaterData(biler){
     let ut = "<table><tr><th>Personnr</th><th>Navn</th><th>Adresse</th><th>Kjennetegn</th>" +
         "<th>Merke</th><th>Type</th></tr>";
     for (const bil of biler){

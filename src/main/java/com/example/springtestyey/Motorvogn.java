@@ -1,6 +1,6 @@
 package com.example.springtestyey;
 
-public class Bil {
+public class Motorvogn {
         private String personnummer;
         private String navn;
         private String adresse;
@@ -9,7 +9,7 @@ public class Bil {
         private String biltype;
 
 
-        public Bil(String personnummer, String navn, String adresse, String kjennetegn, String bilmerke, String biltype){
+        public Motorvogn(String personnummer, String navn, String adresse, String kjennetegn, String bilmerke, String biltype){
             this.personnummer = personnummer;
             this.navn = navn;
             this.adresse = adresse;
@@ -17,7 +17,7 @@ public class Bil {
             this.bilmerke = bilmerke;
             this.biltype = biltype;
         }
-        public Bil(){
+        public Motorvogn(){
 
         }
         public String getPersonnummer() { return personnummer; }

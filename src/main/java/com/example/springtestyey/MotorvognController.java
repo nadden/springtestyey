@@ -9,22 +9,22 @@ import java.util.List;
 
 
 @RestController
-public class BilController {
+public class MotorvognController {
 
-    private final List<Bil> alleBiler = new ArrayList<>();
+    private final List<Motorvogn> motorvognRegister = new ArrayList<>();
 
     @PostMapping("/lagre")
-    public void lagreBil(Bil innBil){
-        alleBiler.add(innBil);
+    public void lagre(Motorvogn bil){
+        motorvognRegister.add(bil);
     }
 
     @GetMapping("/hentAlle")
-    public List<Bil> hentAlle(){
-        return alleBiler;
+    public List<Motorvogn> hentAlle(){
+        return motorvognRegister;
     }
 
     @GetMapping("/slettAlle")
     public void slettAlle(){
-        alleBiler.clear();
+        motorvognRegister.clear();
     }
 }
