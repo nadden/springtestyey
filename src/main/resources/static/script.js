@@ -25,7 +25,7 @@ function hentAlle(){
     });
 }
 
-function formaterData(biler){
+function formaterData(data){
     let ut = "<table><tr><th>Personnr</th><th>Navn</th><th>Adresse</th><th>Kjennetegn</th>" +
         "<th>Merke</th><th>Type</th></tr>";
     for (const bil of biler){
