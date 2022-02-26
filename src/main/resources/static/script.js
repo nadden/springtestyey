@@ -1,44 +1,31 @@
+$(function(){
+    hentAlleKunder();
+});
 
-function regBil(){
-    const motorvogn = {
-        personnummer : $("#personnummer").val(),
-        navn : $("#navn").val(),
-        adresse : $("#adresse").val(),
-        kjennetegn : $("#kjennetegn").val(),
-        bilmerke : $("#bilmerke").val(),
-        biltype : $("#biltype").val(),
-    };
-    $.post("/lagre", motorvogn, function (){
-        hentAlle();
-    });
-    $("#personnummer").val("");
-    $("#navn").val("");
-    $("#adresse").val("");
-    $("#kjennetegn").val("");
-    $("#bilmerke").val("");
-    $("#biltype").val("");
-}
-
-function hentAlle(){
-        $.get("/hentAlle", function (biler){
-        formaterData(biler);
+function hentAlleKunder() {
+    $.get( "/hentKunder", function( kunder ) {
+        formaterKunder(kunder);
     });
 }
 
-function formaterData(biler){
-    let ut = "<table><tr><th>Personnr</th><th>Navn</th><th>Adresse</th><th>Kjennetegn</th>" +
-        "<th>Merke</th><th>Type</th></tr>";
-    for (const bil of biler){
-        ut+= "<tr><td>"+bil.personnummer+"</td><td>"+bil.navn+"</td><td>"+bil.adresse+"</td>" +
-            "<td>"+bil.kjennetegn+"</td><td>"+bil.bilmerke+"</td><td>"+bil.biltype+"</td></tr>";
+function formaterKunder(kunder){
+    var ut = "<table class='table table-striped'>" +
+        "<tr>" +
+        "<th>Fornavn</th><th>Etternavn</th><th>Merke</th>" +
+        "</tr>";
+
+    for(const kunde of kunder ){
+        ut+="<tr>" +
+            "<td>"+kunde.fornavn+"</td>"+
+            "<td>"+kunde.etternavn+"</td>"+
+            "<td>"+kunde.eierBil+"</td>" +
+            "</tr>";
     }
-    ut+="</table>";
-    $("#bilene").html(ut);
+    $("#kundene").html(ut);
 }
 
-function slettBil(){
-    $.get("/slettAlle", function (){
-        hentAlle();
+function slettKundene() {
+    $.get( "/slettAlleKunder", function() {
+    window.location.href = "/";
     });
-
 }

@@ -1,47 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Motorvogn</title>
+    <title>Kunderegister</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js.js"></script>
 </head>
-
-
 <body>
-<script src="script.js"></script>
 
-<link rel="stylesheet" href="style.css">
-
-<h1>Motorvognregister</h1>
-
-
-<table>
-    <tr>
-        <td>Eiers personnummer</td><td>Eiers navn</td><td>Eiers adresse</td>
-    </tr>
-    <tr>
-        <td><input type="text" id="personnummer"/></td>
-        <td><input type="text" id="navn"/></td>
-        <td><input type="text" id="adresse"/></td>
-    </tr>
-    <tr>
-        <td>Kjennetegn</td><td>Bilmerke</td><td>Biltype</td>
-    </tr>
-    <tr>
-        <td><input type="text" id="kjennetegn"/></td>
-        <td><input type="text" id="bilmerke"/></td>
-        <td><input type="text" id="biltype"/></td>
-    </tr>
+<h1>Kunder</h1>
+<table class="table">
+    <div id="kundene"></div>
 </table>
-
-<button onclick="regBil()">Registrer</button></br>
-
-Alle bilene:
-<div id="bilene"></div><br>
-
-<button onclick="slettBil()">Slett alle</button>
-
-
+<a class="btn btn-primary" href="./lagreKunde.html">Register ny kunde</a>
+<a class="btn btn-danger" onclick="slettKundene()" >Slett alle kunder</a>
 </body>
 </html>
-
