@@ -6,7 +6,7 @@ function regBil(){
         adresse : $("#adresse").val(),
         kjennetegn : $("#kjennetegn").val(),
         bilmerke : $("#bilmerke").val(),
-        biltype : $("#biltype").val()
+        biltype : $("#biltype").val(),
     };
     $.post("/lagre", bil, function (){
         hentAlle();
@@ -20,8 +20,7 @@ function regBil(){
 }
 
 function hentAlle(){
-    const url = "http://localhost:8080/?navn="+document.getElementById("navn").value;
-        $.get(url,"/hentAlle", function (data){
+        $.get("/hentAlle", function (data){
         formaterData(data);
     });
 }

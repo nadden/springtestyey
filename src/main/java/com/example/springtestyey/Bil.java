@@ -20,6 +20,8 @@ public class Bil {
         public Bil(){
 
         }
+        public String getPersonnummer() { return personnummer; }
+        public void setPersonnummer(String personnummer) {this.personnummer = personnummer;}
 
         public String getNavn(){
             return navn;
